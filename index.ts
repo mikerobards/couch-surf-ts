@@ -48,9 +48,11 @@ displayReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 const you: {
     userName: {firstName : string, lastName : string};
     isReturning: boolean;
+    age: number;
 } = {
     userName: {firstName: 'Mike', lastName: 'Brown'},
     isReturning: true,
+    age: 50
 }
 
 
