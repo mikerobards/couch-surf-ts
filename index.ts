@@ -6,15 +6,23 @@ const footer = document.querySelector('.footer')
 
 
 let isOpen: boolean
+let isLoggedIn: boolean
 
 
 // Reviews
-const reviews: {
+const reviews: ({
     name: string;
     stars: number;
     loyaltyUser: LoyaltyUser;
     date: string;
-}[] = [
+} |
+{
+    name: string;
+    stars: number;
+    loyaltyUser: LoyaltyUser;
+    date: string;
+    description: string;
+})[] = [
     {
         name: 'Sheia',
         stars: 5,
@@ -31,7 +39,8 @@ const reviews: {
         name: 'Omar',
         stars: 4,
         loyaltyUser: LoyaltyUser.SILVER_USER,
-        date: '27-03-2021'
+        date: '27-03-2021',
+        description: 'AWESOME COUCH!!!!!!'
     }
 ]
 
@@ -122,8 +131,19 @@ const properties: {
 ]
 
 displayReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
-
 populateUser(you.isReturning, you.userName.firstName)
+
+let authStatus : any
+
+isLoggedIn = true;
+
+function showDetails(authorityStatus: any, element : HTMLDivElement, price: number) {
+    if (authorityStatus) {
+        const priceDisplay = document.createElement('div')
+        priceDisplay.innerHTML = price.toString() + '/night'
+        element.appendChild(priceDisplay)
+    }
+ }
 
 for (let i=0; i < properties.length; i++) {
     const card = document.createElement('div')
@@ -133,6 +153,7 @@ for (let i=0; i < properties.length; i++) {
     image.setAttribute('src', properties[i].img)
     card.appendChild(image)
     propertyContainer.appendChild(card)
+    showDetails(authStatus, card, properties[i].price)
 }
 
 //use your location, your current time, and the current temp
