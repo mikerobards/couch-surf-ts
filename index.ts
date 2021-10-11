@@ -55,7 +55,7 @@ const properties: {
             zipcode: number;
             country: string;
         };
-        contactDetails: string;
+        contactDetails: [number, string];
         isAvailableToRent: boolean;
 }[] = [
     {
@@ -69,7 +69,7 @@ const properties: {
             zipcode: 12345,
             country: 'USA'
         },
-        contactDetails: 'landlord@home.com',
+        contactDetails: [8506521687, 'landlord@home.com'],
         isAvailableToRent: true
     },
     {
@@ -83,7 +83,7 @@ const properties: {
             zipcode: 65432,
             country: 'USA'
         },
-        contactDetails: 'madoff@aol.com',
+        contactDetails: [7706548451, 'madoff@aol.com'],
         isAvailableToRent: true
     },
     {
@@ -97,7 +97,7 @@ const properties: {
             zipcode: 98745,
             country: 'USA'
         },
-        contactDetails: 'bobbyjoe@yahoo.com',
+        contactDetails: [6652125481, 'bobbyjoe@yahoo.com'],
         isAvailableToRent: false
     }
 
