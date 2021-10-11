@@ -1,4 +1,5 @@
 const propertyContainer = document.querySelector('.properties')
+const footer = document.querySelector(.'footer')
 
 import { displayReviewTotal, populateUser } from './utils'
 let isOpen: boolean
@@ -32,17 +33,37 @@ const reviews: {
 
 
 // user
-const you: {
-    userName: {firstName : string, lastName : string};
-    isReturning: boolean;
-    age: number;
-    stayedAt: string[];
-} = {
+// const you: {
+//     userName: {firstName : string, lastName : string};
+//     isReturning: boolean;
+//     age: number;
+//     stayedAt: string[];
+// } = {
+//     userName: {firstName: 'Mike', lastName: 'Brown'},
+//     isReturning: true,
+//     age: 50,
+//     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
+// }
+
+const ADMIN = 'admin'
+const READ_ONLY = 'read-only'
+
+enum Permissions {
+    ADMIN,
+    READ_ONLY 
+}
+
+const you = {
     userName: {firstName: 'Mike', lastName: 'Brown'},
+    permissions: Permissions.ADMIN, 
     isReturning: true,
     age: 50,
     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
+
+
+
+
 
 const properties: {
         img: string;
@@ -116,3 +137,7 @@ for (let i=0; i < properties.length; i++) {
     card.appendChild(image)
     propertyContainer.appendChild(card)
 }
+
+//use your location, your current time, and the current temp
+let currentLocation : [string, string, number] = ['Kennesaw, GA', '2:23PM', 75]
+footer.innerHTML = `${currentLocation[0]} ${currentLocation[1]} ${currentLocation[2]}°F`
