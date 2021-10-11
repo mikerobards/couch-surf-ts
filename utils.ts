@@ -18,6 +18,13 @@ export function populateUser(isReturning: boolean, userName: string ) {
     userNameDisplay.innerHTML = userName
 }
 
-export function displayProperties() {
-    
+export function displayProperties(properties) {
+    properties.forEach(prop => {
+        propertiesDisplay.innerHTML += `
+        <div>
+            <h3>${prop.title}</h3>
+            <img src="${prop.img}"/>
+        </div>
+        `
+    })
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { displayReviewTotal, populateUser } from './utils'
 import { Permissions, LoyaltyUser } from './enums'
 
@@ -5,6 +6,9 @@ const propertyContainer = document.querySelector('.properties')
 const footer = document.querySelector('.footer')
 
 
+=======
+import { displayReviewTotal, populateUser, displayProperties } from './utils'
+>>>>>>> f97279fd34595ba5b4595539bd795e075a5c4c71
 let isOpen: boolean
 let isLoggedIn: boolean
 
@@ -133,6 +137,7 @@ const properties: {
 displayReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 populateUser(you.isReturning, you.userName.firstName)
 
+<<<<<<< HEAD
 let authStatus : any
 
 isLoggedIn = true;
@@ -159,3 +164,6 @@ for (let i=0; i < properties.length; i++) {
 //use your location, your current time, and the current temp
 let currentLocation : [string, string, number] = ['Kennesaw, GA', '2:23PM', 75]
 footer.innerHTML = `${currentLocation[0]} ${currentLocation[1]} ${currentLocation[2]}°F`
+=======
+displayProperties(properties);
+>>>>>>> f97279fd34595ba5b4595539bd795e075a5c4c71
