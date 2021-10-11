@@ -1,3 +1,5 @@
+const propertyContainer = document.querySelector('.properties')
+
 import { displayReviewTotal, populateUser } from './utils'
 let isOpen: boolean
 
@@ -104,3 +106,13 @@ const properties: {
 displayReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 
 populateUser(you.isReturning, you.userName.firstName)
+
+for (let i=0; i < properties.length; i++) {
+    const card = document.createElement('div')
+    card.classList.add('card')
+    card.innerHTML = properties[i].title
+    const image = document.createElement('img')
+    image.setAttribute('src', properties[i].img)
+    card.appendChild(image)
+    propertyContainer.appendChild(card)
+}
