@@ -17,23 +17,23 @@ const footer = document.querySelector('.footer')
 
 let isLoggedIn: boolean
 
-enum Permissions {
-    ADMIN = 'ADMIN', 
-    READ_ONLY = 'READ_ONLY'
-}
+// enum Permissions {
+//     ADMIN = 'ADMIN', 
+//     READ_ONLY = 'READ_ONLY'
+// }
 
-enum LoyaltyUser {
-    GOLD_USER = 'GOLD_USER',
-    SILVER_USER = 'SILVER_USER',
-    BRONZE_USER = 'BRONZE_USER'
-}
+// enum LoyaltyUser {
+//     GOLD_USER = 'GOLD_USER',
+//     SILVER_USER = 'SILVER_USER',
+//     BRONZE_USER = 'BRONZE_USER'
+// }
 
-interface Review {
-    name: string; 
-    stars: number; 
-    loyaltyUser: LoyaltyUser; 
-    date: string;   
-}
+// interface Review {
+//     name: string; 
+//     stars: number; 
+//     loyaltyUser: LoyaltyUser; 
+//     date: string;   
+// }
 
 // Reviews
 const reviews: Review[] = [

@@ -75,3 +75,15 @@ body {
   width: 90%;
   background-color: coral;
 }
+
+button {
+  background-color: green;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+button:hover,
+button:focus {
+  background-color: darkgoldenrod;
+}
